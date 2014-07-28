@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B12172E19867CAC00D7E7B2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B12172D19867CAC00D7E7B2 /* main.swift */; };
+		7B12173019867CAC00D7E7B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B12172F19867CAC00D7E7B2 /* AppDelegate.swift */; };
+		7B12173219867CAC00D7E7B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B12173119867CAC00D7E7B2 /* Images.xcassets */; };
+		7B12173519867CAC00D7E7B2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B12173319867CAC00D7E7B2 /* MainMenu.xib */; };
+		7B12174119867CAC00D7E7B2 /* Waken_DiskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B12174019867CAC00D7E7B2 /* Waken_DiskTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B12173B19867CAC00D7E7B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B12172019867CAC00D7E7B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B12172719867CAC00D7E7B2;
+			remoteInfo = "Waken’Disk";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7B12172819867CAC00D7E7B2 /* Waken’Disk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waken’Disk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B12172C19867CAC00D7E7B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B12172D19867CAC00D7E7B2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		7B12172F19867CAC00D7E7B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7B12173119867CAC00D7E7B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7B12173419867CAC00D7E7B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7B12173A19867CAC00D7E7B2 /* Waken’DiskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Waken’DiskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B12173F19867CAC00D7E7B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B12174019867CAC00D7E7B2 /* Waken_DiskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waken_DiskTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B12172519867CAC00D7E7B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B12173719867CAC00D7E7B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B12171F19867CAC00D7E7B2 = {
+			isa = PBXGroup;
+			children = (
+				7B12172A19867CAC00D7E7B2 /* Waken’Disk */,
+				7B12173D19867CAC00D7E7B2 /* Waken’DiskTests */,
+				7B12172919867CAC00D7E7B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B12172919867CAC00D7E7B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B12172819867CAC00D7E7B2 /* Waken’Disk.app */,
+				7B12173A19867CAC00D7E7B2 /* Waken’DiskTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B12172A19867CAC00D7E7B2 /* Waken’Disk */ = {
+			isa = PBXGroup;
+			children = (
+				7B12172F19867CAC00D7E7B2 /* AppDelegate.swift */,
+				7B12173119867CAC00D7E7B2 /* Images.xcassets */,
+				7B12173319867CAC00D7E7B2 /* MainMenu.xib */,
+				7B12172B19867CAC00D7E7B2 /* Supporting Files */,
+			);
+			path = "Waken’Disk";
+			sourceTree = "<group>";
+		};
+		7B12172B19867CAC00D7E7B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B12172C19867CAC00D7E7B2 /* Info.plist */,
+				7B12172D19867CAC00D7E7B2 /* main.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B12173D19867CAC00D7E7B2 /* Waken’DiskTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B12174019867CAC00D7E7B2 /* Waken_DiskTests.swift */,
+				7B12173E19867CAC00D7E7B2 /* Supporting Files */,
+			);
+			path = "Waken’DiskTests";
+			sourceTree = "<group>";
+		};
+		7B12173E19867CAC00D7E7B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B12173F19867CAC00D7E7B2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B12172719867CAC00D7E7B2 /* Waken’Disk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B12174419867CAC00D7E7B2 /* Build configuration list for PBXNativeTarget "Waken’Disk" */;
+			buildPhases = (
+				7B12172419867CAC00D7E7B2 /* Sources */,
+				7B12172519867CAC00D7E7B2 /* Frameworks */,
+				7B12172619867CAC00D7E7B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Waken’Disk";
+			productName = "Waken’Disk";
+			productReference = 7B12172819867CAC00D7E7B2 /* Waken’Disk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B12173919867CAC00D7E7B2 /* Waken’DiskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B12174719867CAC00D7E7B2 /* Build configuration list for PBXNativeTarget "Waken’DiskTests" */;
+			buildPhases = (
+				7B12173619867CAC00D7E7B2 /* Sources */,
+				7B12173719867CAC00D7E7B2 /* Frameworks */,
+				7B12173819867CAC00D7E7B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B12173C19867CAC00D7E7B2 /* PBXTargetDependency */,
+			);
+			name = "Waken’DiskTests";
+			productName = "Waken’DiskTests";
+			productReference = 7B12173A19867CAC00D7E7B2 /* Waken’DiskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B12172019867CAC00D7E7B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Frizlab;
+				TargetAttributes = {
+					7B12172719867CAC00D7E7B2 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					7B12173919867CAC00D7E7B2 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 7B12172719867CAC00D7E7B2;
+					};
+				};
+			};
+			buildConfigurationList = 7B12172319867CAC00D7E7B2 /* Build configuration list for PBXProject "Waken’Disk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7B12171F19867CAC00D7E7B2;
+			productRefGroup = 7B12172919867CAC00D7E7B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B12172719867CAC00D7E7B2 /* Waken’Disk */,
+				7B12173919867CAC00D7E7B2 /* Waken’DiskTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B12172619867CAC00D7E7B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B12173219867CAC00D7E7B2 /* Images.xcassets in Resources */,
+				7B12173519867CAC00D7E7B2 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B12173819867CAC00D7E7B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B12172419867CAC00D7E7B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B12173019867CAC00D7E7B2 /* AppDelegate.swift in Sources */,
+				7B12172E19867CAC00D7E7B2 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B12173619867CAC00D7E7B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B12174119867CAC00D7E7B2 /* Waken_DiskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B12173C19867CAC00D7E7B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B12172719867CAC00D7E7B2 /* Waken’Disk */;
+			targetProxy = 7B12173B19867CAC00D7E7B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7B12173319867CAC00D7E7B2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B12173419867CAC00D7E7B2 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B12174219867CAC00D7E7B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7B12174319867CAC00D7E7B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7B12174519867CAC00D7E7B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Waken’Disk/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7B12174619867CAC00D7E7B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Waken’Disk/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7B12174819867CAC00D7E7B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Waken’Disk.app/Contents/MacOS/Waken’Disk";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Waken’DiskTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		7B12174919867CAC00D7E7B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Waken’Disk.app/Contents/MacOS/Waken’Disk";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Waken’DiskTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B12172319867CAC00D7E7B2 /* Build configuration list for PBXProject "Waken’Disk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B12174219867CAC00D7E7B2 /* Debug */,
+				7B12174319867CAC00D7E7B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B12174419867CAC00D7E7B2 /* Build configuration list for PBXNativeTarget "Waken’Disk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B12174519867CAC00D7E7B2 /* Debug */,
+				7B12174619867CAC00D7E7B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7B12174719867CAC00D7E7B2 /* Build configuration list for PBXNativeTarget "Waken’DiskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B12174819867CAC00D7E7B2 /* Debug */,
+				7B12174919867CAC00D7E7B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B12172019867CAC00D7E7B2 /* Project object */;
+}
