@@ -13,29 +13,11 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet weak var window: NSWindow!
 	
+	dynamic var volumeMountsObserver: VolumeMountsObserver! = nil
+	
 	
 	func applicationDidFinishLaunching(aNotification: NSNotification?) {
-		NSWorkspace.sharedWorkspace().notificationCenter.addObserverForName(NSWorkspaceDidMountNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notif: NSNotification!) -> Void in
-			println("Mounted disk URL: \(notif.userInfo[NSWorkspaceVolumeURLKey])")
-		}
-		NSWorkspace.sharedWorkspace().notificationCenter.addObserverForName(NSWorkspaceDidUnmountNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notif: NSNotification!) -> Void in
-			println("Unmounted disk URL: \(notif.userInfo[NSWorkspaceVolumeURLKey])")
-		}
-		
-		let urls = NSFileManager.defaultManager().mountedVolumeURLsIncludingResourceValuesForKeys([NSURLVolumeNameKey!, NSURLVolumeIsRemovableKey!], options: NSVolumeEnumerationOptions(0))
-		for url in urls as [NSURL] {
-			var volumeName_obj: AnyObject?
-			var isRemovable_obj: AnyObject?
-			url.getResourceValue(&volumeName_obj,  forKey: NSURLVolumeNameKey,        error: nil)
-			url.getResourceValue(&isRemovable_obj, forKey: NSURLVolumeIsRemovableKey, error: nil)
-			
-			let volumeName = volumeName_obj as String
-			let isRemovable = (isRemovable_obj as NSNumber).boolValue
-			
-			if isRemovable {
-				println("Mounted URL: \(url), volume name: \(volumeName)")
-			}
-		}
+		volumeMountsObserver = VolumeMountsObserver(treatNonRemovable: false)
 	}
 	
 	func applicationWillTerminate(aNotification: NSNotification?) {
@@ -43,6 +25,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication!) -> Bool {
-		return true;
+		return true
 	}
 }

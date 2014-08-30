@@ -12,6 +12,8 @@
 		7B12173219867CAC00D7E7B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B12173119867CAC00D7E7B2 /* Images.xcassets */; };
 		7B12173519867CAC00D7E7B2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B12173319867CAC00D7E7B2 /* MainMenu.xib */; };
 		7B12174119867CAC00D7E7B2 /* Waken_DiskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B12174019867CAC00D7E7B2 /* Waken_DiskTests.swift */; };
+		7BFE9E0B19A2B3DA0046198E /* VolumeMountsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFE9E0A19A2B3DA0046198E /* VolumeMountsObserver.swift */; };
+		7BFE9E0D19A340080046198E /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFE9E0C19A340080046198E /* Volume.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		7B12173A19867CAC00D7E7B2 /* Waken’DiskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Waken’DiskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B12173F19867CAC00D7E7B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B12174019867CAC00D7E7B2 /* Waken_DiskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waken_DiskTests.swift; sourceTree = "<group>"; };
+		7BFE9E0A19A2B3DA0046198E /* VolumeMountsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeMountsObserver.swift; sourceTree = "<group>"; };
+		7BFE9E0C19A340080046198E /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				7B12172F19867CAC00D7E7B2 /* AppDelegate.swift */,
+				7BFE9E0C19A340080046198E /* Volume.swift */,
+				7BFE9E0A19A2B3DA0046198E /* VolumeMountsObserver.swift */,
 				7B12173119867CAC00D7E7B2 /* Images.xcassets */,
 				7B12173319867CAC00D7E7B2 /* MainMenu.xib */,
 				7B12172B19867CAC00D7E7B2 /* Supporting Files */,
@@ -208,8 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFE9E0B19A2B3DA0046198E /* VolumeMountsObserver.swift in Sources */,
 				7B12173019867CAC00D7E7B2 /* AppDelegate.swift in Sources */,
 				7B12172E19867CAC00D7E7B2 /* main.swift in Sources */,
+				7BFE9E0D19A340080046198E /* Volume.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +405,7 @@
 				7B12174619867CAC00D7E7B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B12174719867CAC00D7E7B2 /* Build configuration list for PBXNativeTarget "Waken’DiskTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +414,7 @@
 				7B12174919867CAC00D7E7B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
