@@ -20,7 +20,7 @@ class VolumeMountsObserver: NSObject {
 		
 		super.init()
 		
-		let urls = NSFileManager.defaultManager().mountedVolumeURLsIncludingResourceValuesForKeys([NSURLVolumeNameKey!, NSURLVolumeIsRemovableKey!], options: NSVolumeEnumerationOptions(0))
+		let urls = NSFileManager.defaultManager().mountedVolumeURLsIncludingResourceValuesForKeys([NSURLVolumeNameKey!, NSURLVolumeIsRemovableKey!, NSURLEffectiveIconKey!], options: NSVolumeEnumerationOptions(0))
 		for url in urls as [NSURL] {
 			addVolume(Volume(URL: url))
 		}

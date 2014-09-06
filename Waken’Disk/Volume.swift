@@ -6,7 +6,7 @@
  * Copyright (c) 2014 Frizlab. All rights reserved.
  */
 
-import Foundation
+import Cocoa
 
 
 
@@ -14,17 +14,21 @@ class Volume: NSObject, Equatable, Printable {
 	let url: NSURL
 	
 	let volumeName: String?
+	let volumeIcon: NSImage?
 	let isRemovable: Bool?
 	
 	init(URL: NSURL) {
 		self.url = URL
 		
+		var volumeIcon_obj: AnyObject?
 		var volumeName_obj: AnyObject?
 		var isRemovable_obj: AnyObject?
 		self.url.getResourceValue(&volumeName_obj,  forKey: NSURLVolumeNameKey,        error: nil)
 		self.url.getResourceValue(&isRemovable_obj, forKey: NSURLVolumeIsRemovableKey, error: nil)
+		self.url.getResourceValue(&volumeIcon_obj,  forKey: NSURLEffectiveIconKey,     error: nil)
 		
 		self.volumeName = volumeName_obj as? String
+		self.volumeIcon = volumeIcon_obj as? NSImage
 		if isRemovable_obj != nil { self.isRemovable = (isRemovable_obj as NSNumber).boolValue }
 		else                      { self.isRemovable = nil }
 	}
