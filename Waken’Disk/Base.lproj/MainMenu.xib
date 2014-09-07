@@ -721,7 +721,7 @@
                                                                 <binding destination="O9e-YX-FfN" name="value" keyPath="objectValue.volumeIcon" id="Peo-Bp-Cuh"/>
                                                             </connections>
                                                         </imageView>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-VG-1A3">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-VG-1A3">
                                                             <rect key="frame" x="80" y="47" width="97" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Volume Name" id="BSg-iW-e2v">
                                                                 <font key="font" metaFont="systemBold"/>
@@ -732,19 +732,41 @@
                                                                 <binding destination="O9e-YX-FfN" name="value" keyPath="objectValue.volumeName" id="q5f-iv-CzR"/>
                                                             </connections>
                                                         </textField>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iEq-93-8QU">
-                                                            <rect key="frame" x="80" y="25" width="35" height="17"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Infos" id="ZCo-N3-Ctx">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iEq-93-8QU">
+                                                            <rect key="frame" x="80" y="25" width="179" height="17"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mounted a few seconds ago" id="ZCo-N3-Ctx">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvj-FG-Vew">
+                                                            <rect key="frame" x="349" y="42" width="116" height="25"/>
+                                                            <buttonCell key="cell" type="roundTextured" title="Keep It Awoken!" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5PX-lh-XFt">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                        </button>
+                                                        <button toolTip="Automatically start keeping the disk awoken when it mounts" translatesAutoresizingMaskIntoConstraints="NO" id="pde-D7-yiR">
+                                                            <rect key="frame" x="388" y="21" width="79" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Auto-Start" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="f0v-sU-SMf">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="smallSystem"/>
+                                                            </buttonCell>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="Yvj-FG-Vew" firstAttribute="trailing" secondItem="pde-D7-yiR" secondAttribute="trailing" id="BU3-Bs-fdO"/>
                                                         <constraint firstItem="xjH-Wm-qmt" firstAttribute="leading" secondItem="O9e-YX-FfN" secondAttribute="leading" constant="8" id="ZgT-ls-ftU"/>
+                                                        <constraint firstItem="iEq-93-8QU" firstAttribute="top" secondItem="ybK-VG-1A3" secondAttribute="bottom" constant="5" id="aPA-3F-R1X"/>
                                                         <constraint firstItem="xjH-Wm-qmt" firstAttribute="top" secondItem="O9e-YX-FfN" secondAttribute="top" constant="8" id="cOJ-Hh-7h7"/>
+                                                        <constraint firstItem="pde-D7-yiR" firstAttribute="top" secondItem="Yvj-FG-Vew" secondAttribute="bottom" constant="8" id="cTz-lc-vk7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Yvj-FG-Vew" secondAttribute="trailing" constant="15" id="guK-UL-A6O"/>
+                                                        <constraint firstItem="Yvj-FG-Vew" firstAttribute="baseline" secondItem="ybK-VG-1A3" secondAttribute="baseline" id="lsh-NL-hrj"/>
+                                                        <constraint firstItem="ybK-VG-1A3" firstAttribute="leading" secondItem="xjH-Wm-qmt" secondAttribute="trailing" constant="10" id="o9K-O5-wPH"/>
                                                         <constraint firstAttribute="bottom" secondItem="xjH-Wm-qmt" secondAttribute="bottom" constant="8" id="oIp-jS-0H3"/>
+                                                        <constraint firstItem="ybK-VG-1A3" firstAttribute="leading" secondItem="iEq-93-8QU" secondAttribute="leading" id="pA3-IU-pGd"/>
+                                                        <constraint firstItem="ybK-VG-1A3" firstAttribute="top" secondItem="O9e-YX-FfN" secondAttribute="top" constant="16" id="zYd-Kf-73I"/>
                                                     </constraints>
                                                 </tableCellView>
                                             </prototypeCellViews>
