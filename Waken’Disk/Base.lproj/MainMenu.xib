@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6246" systemVersion="14A361c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6206.9"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6246"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -676,7 +677,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -722,7 +723,7 @@
                                                             </connections>
                                                         </imageView>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-VG-1A3">
-                                                            <rect key="frame" x="80" y="47" width="97" height="17"/>
+                                                            <rect key="frame" x="80" y="47" width="94" height="17"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Volume Name" id="BSg-iW-e2v">
                                                                 <font key="font" metaFont="systemBold"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -741,15 +742,15 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvj-FG-Vew">
-                                                            <rect key="frame" x="349" y="42" width="116" height="25"/>
+                                                            <rect key="frame" x="350" y="42" width="115" height="25"/>
                                                             <buttonCell key="cell" type="roundTextured" title="Keep It Awoken!" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5PX-lh-XFt">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
                                                         </button>
                                                         <button toolTip="Automatically start keeping the disk awoken when it mounts" translatesAutoresizingMaskIntoConstraints="NO" id="pde-D7-yiR">
-                                                            <rect key="frame" x="388" y="21" width="79" height="18"/>
-                                                            <buttonCell key="cell" type="check" title="Auto-Start" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="f0v-sU-SMf">
+                                                            <rect key="frame" x="311" y="21" width="156" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Auto-Start at Next Mount" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="f0v-sU-SMf">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="smallSystem"/>
                                                             </buttonCell>
