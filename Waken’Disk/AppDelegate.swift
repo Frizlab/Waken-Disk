@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	
 	func applicationDidFinishLaunching(aNotification: NSNotification?) {
-		volumeMountsObserver = VolumeMountsObserver(treatNonRemovable: false)
+		volumeMountsObserver = VolumeMountsObserver(treatNonRemovable: true)
 	}
 	
 	func applicationWillTerminate(aNotification: NSNotification?) {
