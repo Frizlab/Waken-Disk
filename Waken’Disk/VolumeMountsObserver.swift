@@ -13,7 +13,7 @@ import Cocoa
 class VolumeMountsObserver: NSObject {
 	let treatNonRemovable: Bool
 	
-	dynamic var mountedVolumes: [Volume] = []
+	dynamic var mountedVolumes: [KnownVolume] = []
 	
 	init(treatNonRemovable: Bool) {
 		self.treatNonRemovable = treatNonRemovable
@@ -44,7 +44,7 @@ class VolumeMountsObserver: NSObject {
 			return false
 		}
 		
-		mountedVolumes.append(volume)
+		mountedVolumes.append(KnownVolume(volume: volume))
 		println("Done")
 		return true
 	}
@@ -65,7 +65,7 @@ class VolumeMountsObserver: NSObject {
 	
 	private func indexOfVolume(volume: Volume) -> Int {
 		for i in 0..<mountedVolumes.count {
-			if volume == mountedVolumes[i] {
+			if volume == mountedVolumes[i].volume {
 				return i
 			}
 		}

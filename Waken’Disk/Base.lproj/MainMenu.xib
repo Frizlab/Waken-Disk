@@ -676,25 +676,25 @@
         <window title="Waken’Disk" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="584" height="244"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="584" height="244"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="82" horizontalPageScroll="10" verticalLineScroll="82" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hW-e3-GvT">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="584" height="244"/>
                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="CFx-aM-FZl">
                             <rect key="frame" x="1" y="17" width="238" height="117"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="80" rowSizeStyle="automatic" viewBased="YES" id="JLU-Wt-F0V">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnResizing="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="80" rowSizeStyle="automatic" viewBased="YES" id="JLU-Wt-F0V">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="480" minWidth="40" maxWidth="1000" id="Smm-su-smW">
+                                        <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="581" minWidth="40" maxWidth="1000" id="Smm-su-smW">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -708,7 +708,7 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="O9e-YX-FfN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="480" height="80"/>
+                                                    <rect key="frame" x="1" y="1" width="581" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xjH-Wm-qmt">
@@ -719,7 +719,7 @@
                                                             </constraints>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="eqS-MS-lah"/>
                                                             <connections>
-                                                                <binding destination="O9e-YX-FfN" name="value" keyPath="objectValue.volumeIcon" id="Peo-Bp-Cuh"/>
+                                                                <binding destination="O9e-YX-FfN" name="value" keyPath="objectValue.volume.volumeIcon" id="RkG-Tk-eqa"/>
                                                             </connections>
                                                         </imageView>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-VG-1A3">
@@ -730,7 +730,7 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="O9e-YX-FfN" name="value" keyPath="objectValue.volumeName" id="q5f-iv-CzR"/>
+                                                                <binding destination="O9e-YX-FfN" name="value" keyPath="objectValue.volume.volumeName" id="OIt-iI-yAm"/>
                                                             </connections>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iEq-93-8QU">
@@ -742,18 +742,21 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvj-FG-Vew">
-                                                            <rect key="frame" x="350" y="42" width="115" height="25"/>
+                                                            <rect key="frame" x="451" y="42" width="115" height="25"/>
                                                             <buttonCell key="cell" type="roundTextured" title="Keep It Awoken!" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5PX-lh-XFt">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
                                                         </button>
                                                         <button toolTip="Automatically start keeping the disk awoken when it mounts" translatesAutoresizingMaskIntoConstraints="NO" id="pde-D7-yiR">
-                                                            <rect key="frame" x="311" y="21" width="156" height="18"/>
+                                                            <rect key="frame" x="412" y="21" width="156" height="18"/>
                                                             <buttonCell key="cell" type="check" title="Auto-Start at Next Mount" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="f0v-sU-SMf">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="smallSystem"/>
                                                             </buttonCell>
+                                                            <connections>
+                                                                <binding destination="O9e-YX-FfN" name="enabled" keyPath="objectValue.keptAwoken" id="xuC-vF-j4L"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -780,7 +783,7 @@
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="Yar-Q1-cSn">
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Yar-Q1-cSn">
                             <rect key="frame" x="1" y="119" width="223" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
@@ -797,7 +800,7 @@
                     <constraint firstAttribute="bottom" secondItem="7hW-e3-GvT" secondAttribute="bottom" id="rSw-a5-gCE"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="340" y="316"/>
+            <point key="canvasLocation" x="392" y="258"/>
         </window>
     </objects>
 </document>
