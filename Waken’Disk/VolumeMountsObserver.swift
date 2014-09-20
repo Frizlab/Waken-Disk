@@ -45,6 +45,11 @@ class VolumeMountsObserver: NSObject {
 		}
 		
 		mountedVolumes.append(KnownVolume(volume: volume))
+		mountedVolumes.sort { (a, b) -> Bool in
+			if a.volume.volumeUUID != nil && b.volume.volumeUUID == nil { return true }
+			if a.volume.volumeUUID == nil && b.volume.volumeUUID != nil { return false }
+			return a.volume.volumeName < b.volume.volumeName
+		}
 		println("Done")
 		return true
 	}
