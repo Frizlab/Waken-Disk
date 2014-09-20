@@ -747,6 +747,14 @@
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
+                                                            <connections>
+                                                                <binding destination="O9e-YX-FfN" name="target" keyPath="objectValue" id="XXx-Dt-tOO">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSSelectorName">toggleWakingUp:</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                                <binding destination="O9e-YX-FfN" name="title" keyPath="objectValue.keepAwokenButtonTitle" id="9tQ-o1-sNa"/>
+                                                            </connections>
                                                         </button>
                                                         <button toolTip="Automatically start keeping the disk awoken when it mounts" translatesAutoresizingMaskIntoConstraints="NO" id="pde-D7-yiR">
                                                             <rect key="frame" x="412" y="21" width="156" height="18"/>
@@ -755,7 +763,8 @@
                                                                 <font key="font" metaFont="smallSystem"/>
                                                             </buttonCell>
                                                             <connections>
-                                                                <binding destination="O9e-YX-FfN" name="enabled" keyPath="objectValue.keptAwoken" id="xuC-vF-j4L"/>
+                                                                <binding destination="O9e-YX-FfN" name="value" keyPath="objectValue.automaticallyKeptAwoken" id="75r-ra-PZx"/>
+                                                                <binding destination="O9e-YX-FfN" name="enabled" keyPath="objectValue.canBeSaved" id="FNG-oE-AvK"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>

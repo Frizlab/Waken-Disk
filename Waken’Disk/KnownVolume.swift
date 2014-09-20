@@ -20,6 +20,7 @@ import Cocoa
  * same name they will be recognized as the same volume. */
 class KnownVolume: NSObject {
 	let canBeSaved: Bool
+	let writable: Bool
 	dynamic let volume: Volume
 	dynamic var automaticallyKeptAwoken: Bool {
 		didSet {
@@ -31,12 +32,18 @@ class KnownVolume: NSObject {
 		return timer != nil
 	}
 	
+	dynamic var keepAwokenButtonTitle: String {
+		return !keptAwoken ? "Keep It Awoken!" : "Stop Awaking"
+	}
+	
 	private var timer: NSTimer?
 	
 	init(volume v: Volume) {
 		volume = v
 		automaticallyKeptAwoken = false
 		canBeSaved = (v.volumeUUID != nil)
+		
+		writable = NSFileManager.defaultManager().isWritableFileAtPath(volume.url.path!)
 		
 		super.init()
 		
@@ -49,20 +56,34 @@ class KnownVolume: NSObject {
 		}
 	}
 	
+	@IBAction func toggleWakingUp(sender: AnyObject?) {
+		if keptAwoken {  stopWakingUp() }
+		else          { startWakingUp() }
+	}
+	
 	func startWakingUp() {
 		if timer == nil {
-			self.willChangeValueForKey("keptAwoken")
+			callKVOForKeptAwokenValueChange(true)
 			timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("wakeItUp:"), userInfo: nil, repeats: true)
-			self.didChangeValueForKey("keptAwoken")
+			callKVOForKeptAwokenValueChange(false)
 		}
 	}
 	
 	func stopWakingUp() {
 		if timer != nil {
-			self.willChangeValueForKey("keptAwoken")
+			callKVOForKeptAwokenValueChange(true)
 			timer?.invalidate()
 			timer = nil
-			self.didChangeValueForKey("keptAwoken")
+			callKVOForKeptAwokenValueChange(false)
+		}
+	}
+	
+	private func callKVOForKeptAwokenValueChange(willChange: Bool) {
+		var keys = ["keptAwoken", "keepAwokenButtonTitle"]
+		if willChange { keys = keys.reverse() }
+		for key in keys {
+			if willChange { willChangeValueForKey(key) }
+			else          {  didChangeValueForKey(key) }
 		}
 	}
 	
@@ -73,8 +94,9 @@ class KnownVolume: NSObject {
 			filename = basePath.stringByAppendingPathComponent(".awake.\(random())")
 		} while NSFileManager.defaultManager().fileExistsAtPath(filename)
 		
-		NSFileManager.defaultManager().createFileAtPath(filename, contents: nil, attributes: nil)
-		NSFileManager.defaultManager().removeItemAtPath(filename, error: nil)
+		let fm = NSFileManager.defaultManager()
+		fm.createFileAtPath(filename, contents: nil, attributes: nil)
+		fm.removeItemAtPath(filename, error: nil)
 	}
 	
 	private func getSavedVolumeSettingWithKey(key: String) -> AnyObject? {
@@ -83,14 +105,21 @@ class KnownVolume: NSObject {
 				return savedVolume[key]
 			}
 		}
+		
 		return nil
 	}
 	
 	private func saveVolumeSetting(value: AnyObject, forKey key: String) {
 		if let volUUID = volume.volumeUUID {
-			if let savedVolume = NSUserDefaults.standardUserDefaults().objectForKey(volUUID) as? [String: AnyObject] {
-				automaticallyKeptAwoken = savedVolume["keptAwoken"]!.boolValue!
+			let ud = NSUserDefaults.standardUserDefaults()
+			
+			var savedVolume = [String: AnyObject]()
+			if let curSavedVolume = ud.objectForKey(volUUID) as? [String: AnyObject] {
+				savedVolume = curSavedVolume
 			}
+			
+			savedVolume[key] = value
+			ud.setObject(NSDictionary(dictionary: savedVolume), forKey: volUUID)
 		}
 	}
 }

@@ -37,7 +37,7 @@
 		7B12173A19867CAC00D7E7B2 /* Waken’DiskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Waken’DiskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B12173F19867CAC00D7E7B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B12174019867CAC00D7E7B2 /* Waken_DiskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waken_DiskTests.swift; sourceTree = "<group>"; };
-		7B4F298019C9B28A000CB83A /* KnownVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnownVolume.swift; sourceTree = "<group>"; };
+		7B4F298019C9B28A000CB83A /* KnownVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnownVolume.swift; sourceTree = "<group>"; tabWidth = 3; };
 		7BFE9E0A19A2B3DA0046198E /* VolumeMountsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeMountsObserver.swift; sourceTree = "<group>"; };
 		7BFE9E0C19A340080046198E /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
