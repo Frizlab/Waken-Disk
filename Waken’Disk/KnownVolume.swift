@@ -68,7 +68,7 @@ class KnownVolume: NSObject {
 	func startWakingUp() {
 		if timer == nil {
 			callKVOForKeptAwokenValueChange(true)
-			timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("wakeItUp:"), userInfo: nil, repeats: true)
+			timer = NSTimer.scheduledTimerWithTimeInterval(42.0, target: self, selector: Selector("wakeItUp:"), userInfo: nil, repeats: true)
 			callKVOForKeptAwokenValueChange(false)
 		}
 		infoText = keptAwokenText
