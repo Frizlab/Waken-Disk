@@ -8,7 +8,11 @@
 
 import Cocoa
 
+let notKeptAwokenText = "Not kept awoken"
+let keptAwokenText = "Kept awoken"
+let keptAwokenWriteFailText = "Kept awoken, last write failed"
 
+// 😴😎
 
 /* When initializing a known volume, if the volume has already been saved, the
  * value of keepAwaken will be retrieved.
@@ -20,7 +24,6 @@ import Cocoa
  * same name they will be recognized as the same volume. */
 class KnownVolume: NSObject {
 	let canBeSaved: Bool
-	let writable: Bool
 	dynamic let volume: Volume
 	dynamic var automaticallyKeptAwoken: Bool {
 		didSet {
@@ -33,17 +36,18 @@ class KnownVolume: NSObject {
 	}
 	
 	dynamic var keepAwokenButtonTitle: String {
-		return !keptAwoken ? "Keep It Awoken!" : "Stop Awaking"
+		return !keptAwoken ? "Keep Awoken" : "Stop Awaking"
 	}
+	
+	dynamic var infoText: String
 	
 	private var timer: NSTimer?
 	
 	init(volume v: Volume) {
 		volume = v
+		infoText = notKeptAwokenText
 		automaticallyKeptAwoken = false
 		canBeSaved = (v.volumeUUID != nil)
-		
-		writable = NSFileManager.defaultManager().isWritableFileAtPath(volume.url.path!)
 		
 		super.init()
 		
@@ -67,6 +71,7 @@ class KnownVolume: NSObject {
 			timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("wakeItUp:"), userInfo: nil, repeats: true)
 			callKVOForKeptAwokenValueChange(false)
 		}
+		infoText = keptAwokenText
 	}
 	
 	func stopWakingUp() {
@@ -76,6 +81,7 @@ class KnownVolume: NSObject {
 			timer = nil
 			callKVOForKeptAwokenValueChange(false)
 		}
+		infoText = notKeptAwokenText
 	}
 	
 	private func callKVOForKeptAwokenValueChange(willChange: Bool) {
@@ -95,8 +101,9 @@ class KnownVolume: NSObject {
 		} while NSFileManager.defaultManager().fileExistsAtPath(filename)
 		
 		let fm = NSFileManager.defaultManager()
-		fm.createFileAtPath(filename, contents: nil, attributes: nil)
+		let created = fm.createFileAtPath(filename, contents: nil, attributes: nil)
 		fm.removeItemAtPath(filename, error: nil)
+		infoText = (created ? keptAwokenText : keptAwokenWriteFailText)
 	}
 	
 	private func getSavedVolumeSettingWithKey(key: String) -> AnyObject? {

@@ -692,6 +692,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                    <tableViewGridLines key="gridStyleMask" dashed="YES"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
                                         <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="581" minWidth="40" maxWidth="1000" id="Smm-su-smW">
@@ -734,16 +735,19 @@
                                                             </connections>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iEq-93-8QU">
-                                                            <rect key="frame" x="80" y="25" width="179" height="17"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mounted a few seconds ago" id="ZCo-N3-Ctx">
+                                                            <rect key="frame" x="80" y="25" width="109" height="17"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Not kept awoken" id="ZCo-N3-Ctx">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="O9e-YX-FfN" name="value" keyPath="objectValue.infoText" id="CZn-Ca-RPg"/>
+                                                            </connections>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvj-FG-Vew">
-                                                            <rect key="frame" x="451" y="42" width="115" height="25"/>
-                                                            <buttonCell key="cell" type="roundTextured" title="Keep It Awoken!" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5PX-lh-XFt">
+                                                            <rect key="frame" x="467" y="42" width="99" height="25"/>
+                                                            <buttonCell key="cell" type="roundTextured" title="Keep Awoken" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5PX-lh-XFt">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
@@ -757,8 +761,8 @@
                                                             </connections>
                                                         </button>
                                                         <button toolTip="Automatically start keeping the disk awoken when it mounts" translatesAutoresizingMaskIntoConstraints="NO" id="pde-D7-yiR">
-                                                            <rect key="frame" x="412" y="21" width="156" height="18"/>
-                                                            <buttonCell key="cell" type="check" title="Auto-Start at Next Mount" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="f0v-sU-SMf">
+                                                            <rect key="frame" x="465" y="21" width="103" height="18"/>
+                                                            <buttonCell key="cell" type="check" title="Auto On Mount" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="f0v-sU-SMf">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="smallSystem"/>
                                                             </buttonCell>
