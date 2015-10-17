@@ -18,10 +18,7 @@ let keptAwokenWriteFailText = "Kept awoken, last write failed"
  * value of keepAwaken will be retrieved.
  * However, there won't be any uniquing: if two different known volumes are
  * inited with the same volume, two different known volumes will be returned and
- * they won't be synchronized.
- * Moreover, to know if a volume has been saved, the URL of the volume will be
- * used. So if two volumes are mounted at different point of the time with the
- * same name they will be recognized as the same volume. */
+ * they won't be synchronized. */
 class KnownVolume: NSObject {
 	let canBeSaved: Bool
 	dynamic let volume: Volume
