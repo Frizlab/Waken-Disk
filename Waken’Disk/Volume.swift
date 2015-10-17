@@ -10,7 +10,7 @@ import Cocoa
 
 
 
-class Volume: NSObject, Equatable, Printable {
+class Volume: NSObject {
 	let url: NSURL
 	
 	let volumeUUID: String?
@@ -25,16 +25,15 @@ class Volume: NSObject, Equatable, Printable {
 		var volumeIcon_obj: AnyObject?
 		var volumeName_obj: AnyObject?
 		var isRemovable_obj: AnyObject?
-		self.url.getResourceValue(&volumeUUID_obj,  forKey: NSURLVolumeUUIDStringKey,  error: nil)
-		self.url.getResourceValue(&volumeName_obj,  forKey: NSURLVolumeNameKey,        error: nil)
-		self.url.getResourceValue(&isRemovable_obj, forKey: NSURLVolumeIsRemovableKey, error: nil)
-		self.url.getResourceValue(&volumeIcon_obj,  forKey: NSURLEffectiveIconKey,     error: nil)
+		let _ = try? self.url.getResourceValue(&volumeUUID_obj,  forKey: NSURLVolumeUUIDStringKey)
+		let _ = try? self.url.getResourceValue(&volumeName_obj,  forKey: NSURLVolumeNameKey)
+		let _ = try? self.url.getResourceValue(&isRemovable_obj, forKey: NSURLVolumeIsRemovableKey)
+		let _ = try? self.url.getResourceValue(&volumeIcon_obj,  forKey: NSURLEffectiveIconKey)
 		
 		self.volumeUUID = volumeUUID_obj as? String
 		self.volumeName = volumeName_obj as? String
 		self.volumeIcon = volumeIcon_obj as? NSImage
-		if isRemovable_obj != nil { self.isRemovable = (isRemovable_obj as NSNumber).boolValue }
-		else                      { self.isRemovable = nil }
+		self.isRemovable = (isRemovable_obj as? NSNumber)?.boolValue
 	}
 	
 	override var description: String {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B12172E19867CAC00D7E7B2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B12172D19867CAC00D7E7B2 /* main.swift */; };
 		7B12173019867CAC00D7E7B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B12172F19867CAC00D7E7B2 /* AppDelegate.swift */; };
 		7B12173519867CAC00D7E7B2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B12173319867CAC00D7E7B2 /* MainMenu.xib */; };
 		7B12174119867CAC00D7E7B2 /* Waken_DiskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B12174019867CAC00D7E7B2 /* Waken_DiskTests.swift */; };
@@ -30,7 +29,6 @@
 /* Begin PBXFileReference section */
 		7B12172819867CAC00D7E7B2 /* Waken’Disk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waken’Disk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B12172C19867CAC00D7E7B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B12172D19867CAC00D7E7B2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7B12172F19867CAC00D7E7B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B12173419867CAC00D7E7B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7B12173A19867CAC00D7E7B2 /* Waken’DiskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Waken’DiskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +94,6 @@
 			children = (
 				7B12172C19867CAC00D7E7B2 /* Info.plist */,
 				7B64245319CEDBE1000DA3F1 /* app_icon.icns */,
-				7B12172D19867CAC00D7E7B2 /* main.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -162,7 +159,9 @@
 		7B12172019867CAC00D7E7B2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Frizlab;
 				TargetAttributes = {
 					7B12172719867CAC00D7E7B2 = {
@@ -220,7 +219,6 @@
 			files = (
 				7BFE9E0B19A2B3DA0046198E /* VolumeMountsObserver.swift in Sources */,
 				7B12173019867CAC00D7E7B2 /* AppDelegate.swift in Sources */,
-				7B12172E19867CAC00D7E7B2 /* main.swift in Sources */,
 				7B4F298119C9B28A000CB83A /* KnownVolume.swift in Sources */,
 				7BFE9E0D19A340080046198E /* Volume.swift in Sources */,
 			);
@@ -276,6 +274,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -341,6 +340,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Waken’Disk/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.frizlab.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -353,6 +353,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Waken’Disk/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.frizlab.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -372,6 +373,7 @@
 				);
 				INFOPLIST_FILE = "Waken’DiskTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.frizlab.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -388,6 +390,7 @@
 				);
 				INFOPLIST_FILE = "Waken’DiskTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.frizlab.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};

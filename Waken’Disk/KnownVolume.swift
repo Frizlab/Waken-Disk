@@ -86,7 +86,7 @@ class KnownVolume: NSObject {
 	
 	private func callKVOForKeptAwokenValueChange(willChange: Bool) {
 		var keys = ["keptAwoken", "keepAwokenButtonTitle"]
-		if willChange { keys = keys.reverse() }
+		if willChange { keys = Array(keys.reverse()) }
 		for key in keys {
 			if willChange { willChangeValueForKey(key) }
 			else          {  didChangeValueForKey(key) }
@@ -94,15 +94,15 @@ class KnownVolume: NSObject {
 	}
 	
 	@objc private func wakeItUp(t: NSTimer?) {
-		var basePath = volume.url.path!
+		let basePath = volume.url.path!
 		var filename: String
-		do {
-			filename = basePath.stringByAppendingPathComponent(".awake.\(random())")
+		repeat {
+			filename = (basePath as NSString).stringByAppendingPathComponent(".awake.\(random())")
 		} while NSFileManager.defaultManager().fileExistsAtPath(filename)
 		
 		let fm = NSFileManager.defaultManager()
 		let created = fm.createFileAtPath(filename, contents: nil, attributes: nil)
-		fm.removeItemAtPath(filename, error: nil)
+		let _ = try? fm.removeItemAtPath(filename)
 		infoText = (created ? keptAwokenText : keptAwokenWriteFailText)
 	}
 	
