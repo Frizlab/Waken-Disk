@@ -11,21 +11,23 @@ import Cocoa
 
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate : NSObject, NSApplicationDelegate {
+	
 	@IBOutlet weak var window: NSWindow!
 	
 	dynamic var volumeMountsObserver: VolumeMountsObserver! = nil
 	
 	
-	func applicationDidFinishLaunching(aNotification: NSNotification) {
+	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		volumeMountsObserver = VolumeMountsObserver(treatNonRemovable: true)
 	}
 	
-	func applicationWillTerminate(aNotification: NSNotification) {
+	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
 	}
 	
-	func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
 		return true
 	}
+	
 }

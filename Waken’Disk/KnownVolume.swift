@@ -16,15 +16,16 @@ let keptAwokenWriteFailText = "Kept awoken, last write failed"
 
 /* When initializing a known volume, if the volume has already been saved, the
  * value of keepAwaken will be retrieved.
- * However, there won't be any uniquing: if two different known volumes are
+ * However, there won't be any uniquing: If two different known volumes are
  * inited with the same volume, two different known volumes will be returned and
  * they won't be synchronized. */
-class KnownVolume: NSObject {
+class KnownVolume : NSObject {
+	
 	let canBeSaved: Bool
 	dynamic let volume: Volume
 	dynamic var automaticallyKeptAwoken: Bool {
 		didSet {
-			saveVolumeSetting(automaticallyKeptAwoken, forKey: "keptAwoken")
+			saveVolumeSetting(automaticallyKeptAwoken as AnyObject, forKey: "keptAwoken")
 		}
 	}
 	
@@ -38,7 +39,7 @@ class KnownVolume: NSObject {
 	
 	dynamic var infoText: String
 	
-	private var timer: NSTimer?
+	private var timer: Timer?
 	
 	init(volume v: Volume) {
 		volume = v
@@ -57,15 +58,15 @@ class KnownVolume: NSObject {
 		}
 	}
 	
-	@IBAction func toggleWakingUp(sender: AnyObject?) {
-		if keptAwoken {  stopWakingUp() }
-		else          { startWakingUp() }
+	@IBAction func toggleWakingUp(_ sender: AnyObject?) {
+		if keptAwoken { stopWakingUp()}
+		else          {startWakingUp()}
 	}
 	
 	func startWakingUp() {
 		if timer == nil {
 			callKVOForKeptAwokenValueChange(true)
-			timer = NSTimer.scheduledTimerWithTimeInterval(42.0, target: self, selector: Selector("wakeItUp:"), userInfo: nil, repeats: true)
+			timer = Timer.scheduledTimer(timeInterval: 42.0, target: self, selector: #selector(KnownVolume.wakeItUp(_:)), userInfo: nil, repeats: true)
 			callKVOForKeptAwokenValueChange(false)
 		}
 		infoText = keptAwokenText
@@ -81,31 +82,34 @@ class KnownVolume: NSObject {
 		infoText = notKeptAwokenText
 	}
 	
-	private func callKVOForKeptAwokenValueChange(willChange: Bool) {
+	private func callKVOForKeptAwokenValueChange(_ willChange: Bool) {
 		var keys = ["keptAwoken", "keepAwokenButtonTitle"]
-		if willChange { keys = Array(keys.reverse()) }
+		if willChange {keys = Array(keys.reversed())}
 		for key in keys {
-			if willChange { willChangeValueForKey(key) }
-			else          {  didChangeValueForKey(key) }
+			if willChange {willChangeValue(forKey: key)}
+			else          { didChangeValue(forKey: key)}
 		}
 	}
 	
-	@objc private func wakeItUp(t: NSTimer?) {
-		let basePath = volume.url.path!
+	@objc
+	private func wakeItUp(_ t: Timer?) {
+//		print("Waking up volume \(volume)")
+		
+		let basePath = volume.url.path
 		var filename: String
 		repeat {
-			filename = (basePath as NSString).stringByAppendingPathComponent(".awake.\(random())")
-		} while NSFileManager.defaultManager().fileExistsAtPath(filename)
+			filename = (basePath as NSString).appendingPathComponent(".awake.\(arc4random())")
+		} while FileManager.default.fileExists(atPath: filename)
 		
-		let fm = NSFileManager.defaultManager()
-		let created = fm.createFileAtPath(filename, contents: nil, attributes: nil)
-		let _ = try? fm.removeItemAtPath(filename)
+		let fm = FileManager.default
+		let created = fm.createFile(atPath: filename, contents: nil, attributes: nil)
+		let _ = try? fm.removeItem(atPath: filename)
 		infoText = (created ? keptAwokenText : keptAwokenWriteFailText)
 	}
 	
-	private func getSavedVolumeSettingWithKey(key: String) -> AnyObject? {
+	private func getSavedVolumeSettingWithKey(_ key: String) -> AnyObject? {
 		if let volUUID = volume.volumeUUID {
-			if let savedVolume = NSUserDefaults.standardUserDefaults().objectForKey(volUUID) as? [String: AnyObject] {
+			if let savedVolume = UserDefaults.standard.object(forKey: volUUID) as? [String: AnyObject] {
 				return savedVolume[key]
 			}
 		}
@@ -113,17 +117,18 @@ class KnownVolume: NSObject {
 		return nil
 	}
 	
-	private func saveVolumeSetting(value: AnyObject, forKey key: String) {
+	private func saveVolumeSetting(_ value: AnyObject, forKey key: String) {
 		if let volUUID = volume.volumeUUID {
-			let ud = NSUserDefaults.standardUserDefaults()
+			let ud = UserDefaults.standard
 			
 			var savedVolume = [String: AnyObject]()
-			if let curSavedVolume = ud.objectForKey(volUUID) as? [String: AnyObject] {
+			if let curSavedVolume = ud.object(forKey: volUUID) as? [String: AnyObject] {
 				savedVolume = curSavedVolume
 			}
 			
 			savedVolume[key] = value
-			ud.setObject(NSDictionary(dictionary: savedVolume), forKey: volUUID)
+			ud.set(NSDictionary(dictionary: savedVolume), forKey: volUUID)
 		}
 	}
+	
 }

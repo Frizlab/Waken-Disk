@@ -10,7 +10,8 @@ import Cocoa
 
 
 
-class VolumeMountsObserver: NSObject {
+class VolumeMountsObserver : NSObject {
+	
 	let treatNonRemovable: Bool
 	
 	dynamic var mountedVolumes: [KnownVolume] = []
@@ -20,63 +21,62 @@ class VolumeMountsObserver: NSObject {
 		
 		super.init()
 		
-		if let urls = NSFileManager.defaultManager().mountedVolumeURLsIncludingResourceValuesForKeys([NSURLVolumeUUIDStringKey, NSURLVolumeNameKey, NSURLVolumeIsRemovableKey, NSURLEffectiveIconKey], options: []) {
+		if let urls = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: [URLResourceKey.volumeUUIDStringKey, URLResourceKey.volumeNameKey, URLResourceKey.volumeIsRemovableKey, URLResourceKey.effectiveIconKey], options: []) {
 			for url in urls {
-				addVolume(Volume(URL: url))
+				_ = addVolume(Volume(url: url))
 			}
 		}
 		
 		/* Adding observer to notifications of mounted/unmounted volumes */
-		NSWorkspace.sharedWorkspace().notificationCenter.addObserverForName(NSWorkspaceDidMountNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notif: NSNotification) -> Void in
-			if let url = notif.userInfo![NSWorkspaceVolumeURLKey] as? NSURL {
-				self.addVolume(Volume(URL: url))
+		NSWorkspace.shared().notificationCenter.addObserver(forName: NSNotification.Name.NSWorkspaceDidMount, object: nil, queue: OperationQueue.main) { (notif: Notification) -> Void in
+			if let url = (notif as NSNotification).userInfo![NSWorkspaceVolumeURLKey] as? URL {
+				_ = self.addVolume(Volume(url: url))
 			}
 		}
-		NSWorkspace.sharedWorkspace().notificationCenter.addObserverForName(NSWorkspaceDidUnmountNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notif: NSNotification) -> Void in
-			if let url = notif.userInfo![NSWorkspaceVolumeURLKey] as? NSURL {
-				self.removeVolume(Volume(URL: url))
+		NSWorkspace.shared().notificationCenter.addObserver(forName: NSNotification.Name.NSWorkspaceDidUnmount, object: nil, queue: OperationQueue.main) { (notif: Notification) -> Void in
+			if let url = (notif as NSNotification).userInfo![NSWorkspaceVolumeURLKey] as? URL {
+				_ = self.removeVolume(Volume(url: url))
 			}
 		}
 	}
 	
-	private func addVolume(volume: Volume) -> Bool {
+	private func addVolume(_ volume: Volume) -> Bool {
 		print("Asked to add volume \(volume)... ", terminator: "")
 		
-		if (!treatNonRemovable && volume.isRemovable != nil && !volume.isRemovable!) || indexOfVolume(volume) != NSNotFound {
+		if (!treatNonRemovable && volume.isRemovable != nil && !volume.isRemovable!) || indexOfVolume(volume) != nil {
 			print("Not done")
 			return false
 		}
 		
 		mountedVolumes.append(KnownVolume(volume: volume))
-		mountedVolumes.sortInPlace { (a, b) -> Bool in
-			if a.volume.volumeUUID != nil && b.volume.volumeUUID == nil { return true }
-			if a.volume.volumeUUID == nil && b.volume.volumeUUID != nil { return false }
-			return a.volume.volumeName < b.volume.volumeName
+		mountedVolumes.sort { (a, b) -> Bool in
+			if a.volume.volumeUUID != nil && b.volume.volumeUUID == nil {return true}
+			if a.volume.volumeUUID == nil && b.volume.volumeUUID != nil {return false}
+			switch (a.volume.volumeName, b.volume.volumeName) {
+			case let (vna?, vnb?): return vna < vnb
+			case     (_?, nil):    return true
+			default:               return false
+			}
 		}
 		print("Done")
 		return true
 	}
 	
-	private func removeVolume(volume: Volume) -> Bool {
+	private func removeVolume(_ volume: Volume) -> Bool {
 		print("Asked to remove volume \(volume)... ", terminator: "")
 		
-		let idx = indexOfVolume(volume)
-		if idx == NSNotFound {
+		guard let idx = indexOfVolume(volume) else {
 			print("Not done")
 			return false
 		}
 		
-		mountedVolumes.removeAtIndex(idx)
+		mountedVolumes.remove(at: idx)
 		print("Done")
 		return true
 	}
 	
-	private func indexOfVolume(volume: Volume) -> Int {
-		for i in 0..<mountedVolumes.count {
-			if volume == mountedVolumes[i].volume {
-				return i
-			}
-		}
-		return NSNotFound
+	private func indexOfVolume(_ volume: Volume) -> Int? {
+		return mountedVolumes.index {$0.volume == volume}
 	}
+	
 }
