@@ -15,7 +15,7 @@ class AppDelegate : NSObject, NSApplicationDelegate {
 	
 	@IBOutlet weak var window: NSWindow!
 	
-	dynamic var volumeMountsObserver: VolumeMountsObserver! = nil
+	@objc dynamic var volumeMountsObserver: VolumeMountsObserver! = nil
 	
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -23,7 +23,6 @@ class AppDelegate : NSObject, NSApplicationDelegate {
 	}
 	
 	func applicationWillTerminate(_ aNotification: Notification) {
-		// Insert code here to tear down your application
 	}
 	
 	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

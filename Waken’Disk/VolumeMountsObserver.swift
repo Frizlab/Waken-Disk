@@ -14,7 +14,7 @@ class VolumeMountsObserver : NSObject {
 	
 	let treatNonRemovable: Bool
 	
-	dynamic var mountedVolumes: [KnownVolume] = []
+	@objc dynamic var mountedVolumes: [KnownVolume] = []
 	
 	init(treatNonRemovable: Bool) {
 		self.treatNonRemovable = treatNonRemovable
@@ -28,13 +28,13 @@ class VolumeMountsObserver : NSObject {
 		}
 		
 		/* Adding observer to notifications of mounted/unmounted volumes */
-		NSWorkspace.shared().notificationCenter.addObserver(forName: NSNotification.Name.NSWorkspaceDidMount, object: nil, queue: OperationQueue.main) { (notif: Notification) -> Void in
-			if let url = (notif as NSNotification).userInfo![NSWorkspaceVolumeURLKey] as? URL {
+		NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didMountNotification, object: nil, queue: OperationQueue.main) { (notif: Notification) -> Void in
+			if let url = (notif as NSNotification).userInfo![NSWorkspace.volumeURLUserInfoKey] as? URL {
 				_ = self.addVolume(Volume(url: url))
 			}
 		}
-		NSWorkspace.shared().notificationCenter.addObserver(forName: NSNotification.Name.NSWorkspaceDidUnmount, object: nil, queue: OperationQueue.main) { (notif: Notification) -> Void in
-			if let url = (notif as NSNotification).userInfo![NSWorkspaceVolumeURLKey] as? URL {
+		NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didUnmountNotification, object: nil, queue: OperationQueue.main) { (notif: Notification) -> Void in
+			if let url = (notif as NSNotification).userInfo![NSWorkspace.volumeURLUserInfoKey] as? URL {
 				_ = self.removeVolume(Volume(url: url))
 			}
 		}

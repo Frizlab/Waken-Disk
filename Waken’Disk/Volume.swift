@@ -14,9 +14,9 @@ class Volume : NSObject {
 	
 	let url: URL
 	
-	let volumeUUID: String?
-	let volumeName: String?
-	let volumeIcon: NSImage?
+	@objc let volumeUUID: String?
+	@objc let volumeName: String?
+	@objc let volumeIcon: NSImage?
 	let isRemovable: Bool?
 	
 	init(url newURL: URL) {
@@ -38,7 +38,7 @@ class Volume : NSObject {
 	}
 	
 	override var description: String {
-		return "{Volume URL: \(url); Volume Name: \(volumeName); Is Removable: \(isRemovable)}"
+		return "{Volume URL: \(url); Volume Name: \(volumeName ?? "<None>"); Is Removable: \(isRemovable as Any? ?? "<Unknown>")}"
 	}
 	
 }

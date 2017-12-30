@@ -21,23 +21,23 @@ let keptAwokenWriteFailText = "Kept awoken, last write failed"
  * they won't be synchronized. */
 class KnownVolume : NSObject {
 	
-	let canBeSaved: Bool
-	dynamic let volume: Volume
-	dynamic var automaticallyKeptAwoken: Bool {
+	@objc let canBeSaved: Bool
+	@objc dynamic let volume: Volume
+	@objc dynamic var automaticallyKeptAwoken: Bool {
 		didSet {
 			saveVolumeSetting(automaticallyKeptAwoken as AnyObject, forKey: "keptAwoken")
 		}
 	}
 	
-	dynamic var keptAwoken: Bool {
+	@objc dynamic var keptAwoken: Bool {
 		return timer != nil
 	}
 	
-	dynamic var keepAwokenButtonTitle: String {
+	@objc dynamic var keepAwokenButtonTitle: String {
 		return !keptAwoken ? "Keep Awoken" : "Stop Awaking"
 	}
 	
-	dynamic var infoText: String
+	@objc dynamic var infoText: String
 	
 	private var timer: Timer?
 	
