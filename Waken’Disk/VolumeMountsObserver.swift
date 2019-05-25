@@ -1,10 +1,10 @@
 /*
- * VolumeMountsObserver.swift
- * Waken’Disk
- *
- * Created by François LAMBOLEY on 19/08/14.
- * Copyright (c) 2014 Frizlab. All rights reserved.
- */
+ * VolumeMountsObserver.swift
+ * Waken’Disk
+ *
+ * Created by François LAMBOLEY on 19/08/14.
+ * Copyright (c) 2014 Frizlab. All rights reserved.
+ */
 
 import Cocoa
 
@@ -14,7 +14,7 @@ class VolumeMountsObserver : NSObject {
 	
 	let treatNonRemovable: Bool
 	
-	@objc dynamic var mountedVolumes: [KnownVolume] = []
+	@objc dynamic var mountedVolumes = [KnownVolume]()
 	
 	init(treatNonRemovable: Bool) {
 		self.treatNonRemovable = treatNonRemovable
@@ -49,7 +49,7 @@ class VolumeMountsObserver : NSObject {
 		}
 		
 		mountedVolumes.append(KnownVolume(volume: volume))
-		mountedVolumes.sort { (a, b) -> Bool in
+		mountedVolumes.sort{ (a, b) -> Bool in
 			if a.volume.volumeUUID != nil && b.volume.volumeUUID == nil {return true}
 			if a.volume.volumeUUID == nil && b.volume.volumeUUID != nil {return false}
 			switch (a.volume.volumeName, b.volume.volumeName) {
@@ -76,7 +76,7 @@ class VolumeMountsObserver : NSObject {
 	}
 	
 	private func indexOfVolume(_ volume: Volume) -> Int? {
-		return mountedVolumes.index {$0.volume == volume}
+		return mountedVolumes.firstIndex{ $0.volume == volume }
 	}
 	
 }

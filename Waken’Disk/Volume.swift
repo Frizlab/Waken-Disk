@@ -1,10 +1,10 @@
 /*
- * Volume.swift
- * Waken’Disk
- *
- * Created by François LAMBOLEY on 19/08/14.
- * Copyright (c) 2014 Frizlab. All rights reserved.
- */
+ * Volume.swift
+ * Waken’Disk
+ *
+ * Created by François LAMBOLEY on 19/08/14.
+ * Copyright (c) 2014 Frizlab. All rights reserved.
+ */
 
 import Cocoa
 

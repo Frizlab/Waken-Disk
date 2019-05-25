@@ -1,12 +1,14 @@
 /*
- * KnownVolume.swift
- * Waken’Disk
- *
- * Created by François Lamboley on 9/17/14.
- * Copyright (c) 2014 Frizlab. All rights reserved.
- */
+ * KnownVolume.swift
+ * Waken’Disk
+ *
+ * Created by François Lamboley on 9/17/14.
+ * Copyright (c) 2014 Frizlab. All rights reserved.
+ */
 
 import Cocoa
+
+
 
 let notKeptAwokenText = "Not kept awoken"
 let keptAwokenText = "Kept awoken"
