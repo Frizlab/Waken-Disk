@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -650,8 +650,8 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
-                            <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="Bring All to Front" keyEquivalent="`" id="LE2-aR-0XJ">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="DRN-fu-gQh"/>
                                 </connections>
@@ -678,29 +678,28 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="584" height="244"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
             <value key="minSize" type="size" width="400" height="71"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="584" height="244"/>
+                <rect key="frame" x="0.0" y="0.0" width="603" height="244"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="82" horizontalPageScroll="10" verticalLineScroll="82" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hW-e3-GvT">
-                        <rect key="frame" x="0.0" y="0.0" width="584" height="244"/>
+                        <rect key="frame" x="0.0" y="0.0" width="603" height="244"/>
                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="CFx-aM-FZl">
-                            <rect key="frame" x="0.0" y="0.0" width="584" height="244"/>
+                            <rect key="frame" x="0.0" y="0.0" width="603" height="244"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnResizing="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="80" rowSizeStyle="automatic" viewBased="YES" id="JLU-Wt-F0V">
-                                    <rect key="frame" x="0.0" y="0.0" width="584" height="244"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnResizing="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="80" rowSizeStyle="automatic" viewBased="YES" id="JLU-Wt-F0V">
+                                    <rect key="frame" x="0.0" y="0.0" width="603" height="244"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                     <tableViewGridLines key="gridStyleMask" dashed="YES"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="581" minWidth="40" maxWidth="1000" id="Smm-su-smW">
+                                        <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="571" minWidth="40" maxWidth="1000" id="Smm-su-smW">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -712,7 +711,7 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="O9e-YX-FfN">
-                                                    <rect key="frame" x="1" y="1" width="581" height="80"/>
+                                                    <rect key="frame" x="11" y="1" width="580" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xjH-Wm-qmt">
@@ -727,7 +726,7 @@
                                                             </connections>
                                                         </imageView>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-VG-1A3">
-                                                            <rect key="frame" x="80" y="47" width="93" height="17"/>
+                                                            <rect key="frame" x="80" y="48" width="93" height="16"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Volume Name" id="BSg-iW-e2v">
                                                                 <font key="font" metaFont="systemBold"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -738,7 +737,7 @@
                                                             </connections>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iEq-93-8QU">
-                                                            <rect key="frame" x="80" y="25" width="106" height="17"/>
+                                                            <rect key="frame" x="80" y="27" width="106" height="16"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Not kept awoken" id="ZCo-N3-Ctx">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -749,7 +748,7 @@
                                                             </connections>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvj-FG-Vew">
-                                                            <rect key="frame" x="471" y="43" width="95" height="23"/>
+                                                            <rect key="frame" x="468" y="43" width="98" height="23"/>
                                                             <buttonCell key="cell" type="roundTextured" title="Keep Awoken" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5PX-lh-XFt">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
@@ -764,7 +763,7 @@
                                                             </connections>
                                                         </button>
                                                         <button toolTip="Automatically start keeping the disk awoken when it mounts" translatesAutoresizingMaskIntoConstraints="NO" id="pde-D7-yiR">
-                                                            <rect key="frame" x="467" y="21" width="101" height="18"/>
+                                                            <rect key="frame" x="465" y="22" width="100" height="16"/>
                                                             <buttonCell key="cell" type="check" title="Auto On Mount" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="f0v-sU-SMf">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="smallSystem"/>
