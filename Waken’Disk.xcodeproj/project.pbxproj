@@ -21,6 +21,7 @@
 		7B12172F19867CAC00D7E7B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B12173419867CAC00D7E7B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7B3A4DF625DF969000C4D82E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		7B3A4DFD25DFA97C00C4D82E /* Readme.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.adoc; sourceTree = "<group>"; };
 		7B4F298019C9B28A000CB83A /* KnownVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnownVolume.swift; sourceTree = "<group>"; tabWidth = 3; };
 		7B96E18622994E13007D9710 /* Waken’Disk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Waken’Disk.entitlements"; sourceTree = "<group>"; };
 		7BFE9E0A19A2B3DA0046198E /* VolumeMountsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeMountsObserver.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 		7B12171F19867CAC00D7E7B2 = {
 			isa = PBXGroup;
 			children = (
+				7B3A4DFD25DFA97C00C4D82E /* Readme.adoc */,
 				7B12172A19867CAC00D7E7B2 /* Waken’Disk */,
 				7B12172919867CAC00D7E7B2 /* Products */,
 			);
